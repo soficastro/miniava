@@ -1,0 +1,26 @@
+{% extends "dashboard.html" %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    <li>/</li>
+    <li><a href="{% url 'announcements' course.slug %}">{{ course }}</a></li>
+{% endblock %}
+
+{% block menu_options %}
+<li class="pure-menu-heading">
+	{{ course }}
+</li>
+<li>
+    <a href="{% url 'lessons' course.slug %}">
+        <i class="fa fa-video-camera"></i>
+            Aulas e Materiais
+    </a>
+</li>
+<li>
+    <a href="{% url 'announcements' course.slug %}">
+        <i class="fa fa-envelope"></i>
+            Anúncios
+    </a>
+</li>
+{{ block.super }}
+{% endblock %}
